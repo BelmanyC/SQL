@@ -1,20 +1,20 @@
 
 /**belsboutique
-trenchcoat S(3), M(3), L(3), Q(9), P(400)
-puffercoat S(3), M(3), L(3), Q(9), P(300)
-jeanjacket S(3), M(3), L(3), Q(9), P(100)
-raincoat S(3), M(3), L(3), Q(9), P(110)
-leatherjacket S(2), M(2), L(2), Q(6), P(200)
-leatherjacket cropped S(2), M(2), L(2), Q(6), P(150)
-trousers slim S(4), M(4), L(4), Q(12), P(50)
-trousers bootcut S(4), M(4), L(4), Q(12), P(50)
-trousers short S(4), M(4), L(4), Q(12), P(40)
-skirt midlength S(2), M(2), L(2), Q(6), P(50
-skirt long S(2), M(2), L(2), Q(6), P(30)
-skirt short S(2), M(2), L(2), Q(6), P(50)
-sweatshirt cotton S(3), M(3), L(3), Q(9), P(20)
-sweatshirt knit S(3), M(3), L(3), Q(9), P(40)
-sweatshiert cashmere S(4), M(4), L(4), Q(12), P(60)
+trenchcoat (3, 3, 3, 9, 400)
+puffercoat (3, 3, 3, 9, 300)
+jeanjacket (3, 3, 3, 9, 100)
+raincoat S(3, 3, 3, 9, 110)
+leatherjacket (2, 2, 2, 6, 200)
+leatherjacket cropped (2, 2, 2, 6, 150)
+trousers slim (4, 4, 4, 12, 50)
+trousers bootcut (4, 4, 4, 12, 50)
+trousers short (4, 4, 4, 12, 40)
+skirt midlength (2, 2, 2, 6, 50)
+skirt long (2, 2, 2, 6, 30
+skirt short (2, 2, 2, 6, 50)
+sweatshirt cotton (3, 3, 3, 9, 20)
+sweatshirt knit (3, 3, 3, 9, 40)
+sweatshiert cashmere (4, 4, 4, 12, 60)
 **/
 
 CREATE TABLE belsboutique (id INTEGER PRIMARY KEY, clothes TEXT, small INTEGER, medium INTEGER, large INTEGER, quantity INTEGER, price INTEGER);
@@ -29,7 +29,7 @@ INSERT INTO belsboutique VALUES (7, "trousers slim", 4, 4, 4, 12, 50);
 INSERT INTO belsboutique VALUES (8, "trousers bootcut", 4, 4, 4, 12, 50);
 INSERT INTO belsboutique VALUES (9, "trousers short", 4, 4, 4, 12, 40);
 INSERT INTO belsboutique VALUES (10, "skirt midlength", 2, 2, 2, 6, 50);
-INSERT INTO belsboutique VALUES (11, "skirt long", 2 , 2, 2, 6, 30);
+INSERT INTO belsboutique VALUES (11, "skirt long", 2, 2, 2, 6, 30);
 INSERT INTO belsboutique VALUES (12, "skirt short", 2, 2, 2, 6, 50);
 INSERT INTO belsboutique VALUES (13, "sweatshirt cotton", 3, 3, 3, 9, 20);
 INSERT INTO belsboutique VALUES (14, "sweatshirt knit", 3, 3, 3, 9, 40);
@@ -43,10 +43,9 @@ SELECT * FROM belsboutique ORDER BY quantity;
 
 SELECT SUM(quantity) FROM belsboutique;
 
-SELECT SUM(price) FROM belsboutique GROUP BY small;
-SELECT SUM(price) FROM belsboutique;
-SELECT MIN(price) FROM belsboutique GROUP BY medium;
-SELECT MIN(price) FROM belsboutique;
-SELECT MAX(price) FROM belsboutique GROUP BY large;
-SELECT MAX(price) FROM belsboutique;
+SELECT price FROM belsboutique WHERE clothes='skirt midlength';
+SELECT price FROM belsboutique WHERE clothes='trousers knit';
 
+SELECT quantity FROM belsboutique WHERE clothes='raincoat';
+SELECT quantity FROM belsboutique WHERE clothes='trousers short';
+SELECT quantity FROM belsboutique WHERE clothes='puffercoat';
